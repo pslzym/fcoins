@@ -15,7 +15,7 @@
 1. 安装相关的SDK。（pip install fcoin）
 2. 修改相关的库文件
 ```
-由于Fcoins平台还不是很完善，SDK相关API有错误，相关的API文档的例子不可用。https://developer.fcoin.com/zh.html 下面如果不修改，不影响脚本的运行。
+由于Fcoins平台还不是很完善，SDK相关API有错误，相关的API文档的例子不可用。https://developer.fcoin.com/zh.html.
 /usr/local/lib/python2.7/dist-packages/fcoin/dataapi.py
 113     def list_orders(self, **payload):
 114         """get orders"""
