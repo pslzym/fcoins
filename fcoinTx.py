@@ -12,30 +12,42 @@ def get_ft_price(api):
     return prices["data"]["ticker"][0]
 
 def buy_ft(api, price):
-    res = api.buy("fteth", price, 5)
-    if res["status"] == 0:
-        return True
-    else:
-        return False
+    try:
+        res = api.buy("fteth", price, 5)
+        if res["status"] == 0:
+            return True
+        else:
+            return False
+    except:
+        print "buy ft failed"
 
 def get_eth_balance(api):
     balance = api.get_balance()
-    for i in balance["data"]:
-        if i["currency"] == "eth":
-            return i["balance"]
+    if balance.has_key("data"):
+        for i in balance["data"]:
+            if i["currency"] == "eth":
+                return i["balance"]
+    else:
+        return 0
 
 def get_ft_balance(api):
     balance = api.get_balance()
-    for i in balance["data"]:
-        if i["currency"] == "ft":
-            return i["balance"]
+    if balance.has_key("data"):
+        for i in balance["data"]:
+            if i["currency"] == "ft":
+                return i["balance"]
+    else:
+        return 0
 
 def sell_ft(api, price):
-    res = api.sell("fteth", price, 5)
-    if res["status"] == 0:
-        return True
-    else:
-        return False
+    try:
+        res = api.sell("fteth", price, 5)
+        if res["status"] == 0:
+            return True
+        else:
+            return False
+    except:
+        print "sell_ft failed"
 
 
 if __name__ == '__main__':
