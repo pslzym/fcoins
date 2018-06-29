@@ -59,6 +59,7 @@ if __name__ == '__main__':
     ft_price = get_ft_price(api)
 
     for i in range(1, int(sys.argv[3])):
+        print "count :", i
         ft_price = get_ft_price(api)
         eth_balance = get_eth_balance(api)
 
